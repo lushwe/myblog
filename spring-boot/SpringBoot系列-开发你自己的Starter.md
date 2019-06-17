@@ -316,7 +316,7 @@ public class Application {
 }
 ```
 运行 `Application` ，日志打印如下
-![](/images/spring-boot-starter-redisson-image.png)
+![](https://github.com/lushwe/myblog/blob/master/spring-boot/images/spring-boot-starter-redisson-image.png)
 
 日志显示，我们能正常使用 `RedissonClient` 了
 
