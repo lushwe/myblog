@@ -1,10 +1,12 @@
 ## 本文简单介绍一下 `FactoryBean`
 
 - `FactoryBean` 是 `Spring` `Bean` 包中一个接口（`org.springframework.beans.factory.FactoryBean`）
+
 - `FactoryBean` 接口有三个方法
   - `getObject()`
   - `getObjectType()`
   - `isSingleton()`
+
 - 如果一个对象实现了 `FactoryBean` 接口，那么该对象将不会直接作为一个 `Bean` 实例暴露，而是一个创建该对象的工厂，什么意思呢？接下来用代码解释
   - i 假设如下代码， `CarFactoryBean` 实现 `FactoryBean`
   ```java
@@ -80,12 +82,18 @@
       e.printStackTrace();
   }
   ```
-  - 日志打印如下
+  日志打印如下
+
   ```
   car1 = com.lushwe.controller.CarFactoryBean@79ab3a71
   car2 = com.lushwe.controller.CarFactoryBean@79ab3a71
   ```
-- 由此看来， `CarFactoryBean` 实现 `FactoryBean` ，单纯根据  `CarFactoryBean` 对应的名称获取，获取到是其方法 `getObject()` 返回的对象实例，并非 `CarFactoryBean` 对象实例，要获取 `CarFactoryBean` 对象实例：
-  - 第一，根据名称获取，需要使用 `&car`
-  - 第二，根据类型获取
 
+- 总结
+
+  `CarFactoryBean` 实现 `FactoryBean` ，单纯根据  `CarFactoryBean` 对应的名称获取，获取到是其方法 `getObject()` 返回的对象实例，并非 `CarFactoryBean` 对象实例，要获取 `CarFactoryBean` 对象实例：
+
+  - 第一，根据名称获取，要加前缀 `&` ，这里使用 `&car`
+  - 第二，根据类型获取
+  
+  
