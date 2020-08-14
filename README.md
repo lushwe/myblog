@@ -1,7 +1,7 @@
 # 个人博客
 
-#### [算法](https://github.com/lushwe/myblog/tree/master/algorithm)
-#### [设计模式](https://github.com/lushwe/myblog/tree/master/design-patterns)
+#### [算法系列](https://github.com/lushwe/myblog/tree/master/algorithm)
+#### [设计模式系列](https://github.com/lushwe/myblog/tree/master/design-patterns)
 
-#### [Spring](https://github.com/lushwe/myblog/tree/master/spring)
-#### [Spring Boot](https://github.com/lushwe/myblog/tree/master/spring-boot)
+#### [Spring系列](https://github.com/lushwe/myblog/tree/master/spring)
+#### [Spring Boot系列](https://github.com/lushwe/myblog/tree/master/spring-boot)
