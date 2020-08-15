@@ -1,4 +1,4 @@
-# 开发你自己的Spring Boot Starter
+# Spring Boot 实战系列 - 开发自己的 Starter
 
 ## 1. Spring Boot Starter 简介
 - `Spring Boot Starter` 是一组方便使用的依赖关系描述符，可以在应用程序中包含这些描述符。借助 `Spring Boot Starter` 开发人员可以获得所需的所有 Spring 及相关技术的一站式服务，而无需查看示例代码或复制粘贴依赖的库文件。譬如，如果需要 Spring JPA 访问数据库，则可以在工程中直接饮用 `spring-boot-starter-data-jpa`
