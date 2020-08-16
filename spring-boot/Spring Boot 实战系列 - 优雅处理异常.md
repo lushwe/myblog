@@ -1,4 +1,4 @@
-# Spring Boot 实战系列 - 异常优雅处理
+# Spring Boot 实战系列 - 优雅处理异常
 
 ## 准备工作
 - `pom.xml` 依赖如下
