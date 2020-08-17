@@ -5,3 +5,4 @@
 - [Spring Boot 实战系列 - 任务调度](https://github.com/lushwe/myblog/blob/master/spring-boot/Spring%20Boot%20%E5%AE%9E%E6%88%98%E7%B3%BB%E5%88%97%20-%20%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6.md)
 - [Spring Boot 实战系列 - 优雅处理异常](https://github.com/lushwe/myblog/blob/master/spring-boot/Spring%20Boot%20%E5%AE%9E%E6%88%98%E7%B3%BB%E5%88%97%20-%20%E4%BC%98%E9%9B%85%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8.md)
 - [Spring Boot 实战系列 - 方法异步调用](https://github.com/lushwe/myblog/blob/master/spring-boot/Spring%20Boot%20%E5%AE%9E%E6%88%98%E7%B3%BB%E5%88%97%20-%20%E6%96%B9%E6%B3%95%E5%BC%82%E6%AD%A5%E8%B0%83%E7%94%A8.md)
+- [Spring Boot 实战系列 - 整合Redis](https://github.com/lushwe/myblog/blob/master/spring-boot/Spring%20Boot%20%E5%AE%9E%E6%88%98%E7%B3%BB%E5%88%97%20-%20%E6%95%B4%E5%90%88Redis.md)
