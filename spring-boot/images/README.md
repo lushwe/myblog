@@ -1,1 +1,1 @@
-- SpringBoot系列相关图片存储路径
+- Spring Boot 系列相关图片存储路径
