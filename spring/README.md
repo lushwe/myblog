@@ -1,3 +1,3 @@
-## Spring系列
+# Spring系列
 
-#### [FactoryBean](https://github.com/lushwe/myblog/blob/master/spring/FactoryBean.md)
+- [Sping系列 - FactoryBean](https://github.com/lushwe/myblog/blob/master/spring/FactoryBean.md)
