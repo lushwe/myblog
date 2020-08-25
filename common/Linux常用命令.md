@@ -7,3 +7,4 @@
 - 查看磁盘使用情况 -- `du` , `df`
 - 查看进程、端口情况 -- `netstat -tunlp | grep 进程ID/端口号`
 - 查看Java进程 -- `ps -ef|grep java`
+- 强制杀进程 -- `kill -9 pid`
