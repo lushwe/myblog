@@ -12,4 +12,5 @@
 - #8 【字符串转整数】
 - #9 【回文数】 [leetcode](https://leetcode-cn.com/problems/palindrome-number/) / [learn-algorithm](https://github.com/lushwe/learn-algorithm/blob/master/algorithm-leetcode/src/main/java/com/lushwe/algorithm/leetcode/Num0009.java)
 
+- #141 【环形链表】 [leetcode]() / [learn-algorithm](https://github.com/lushwe/learn-algorithm/blob/master/algorithm-leetcode/src/main/java/com/lushwe/algorithm/leetcode/Num0141.java)
 - #206 【反转链接】 [leetcode](https://leetcode-cn.com/problems/reverse-linked-list/) / [learn-algorithm](https://github.com/lushwe/learn-algorithm/blob/master/algorithm-leetcode/src/main/java/com/lushwe/algorithm/leetcode/Num0206.java)
