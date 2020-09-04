@@ -60,31 +60,34 @@ public void execute(Runnable command) {
         if (addWorker(command, true))
             // 新建成功，则执行返回
             return;
-        // 进入这里，表示上面 addWorker 方法执行失败，为啥呢，
-        // 因为多线程情况下，可能多个线程同时执行 addWorker ，其他线程执行成功了
-        // 这里重新获取一下ctl的值
+        // 进入这里，表示上面 addWorker 方法执行失败，两种情况：
+        // 1、多个线程同时执行 addWorker, 另外一个线程执行成功，此时线程数大于等于核心线程数
+        // 2、线程池刚刚 SHUTDOWN, （所以下面首先判断一下线程的状态）
+        // 这里重新获取一下ctl的值，用于下面判断线程池状态
         c = ctl.get();
     }
-    // isRunning 方法判断当前线程池是否运行状态，workQueue.offer 方法是把任务加到队列
+    // 判断当前线程池是否运行状态，若线程池是运行状态，则执行 workQueue.offer 方法是把任务加到阻塞队列
     if (isRunning(c) && workQueue.offer(command)) {
         // 进入这里，表示当前线程池是运行状态，且加入队列成功
         // 这里重新获取一下ctl的值，双重校验
         // 第一，看当前线程池是否运行状态
         // 第二，看当前线程池线程数量是否为0
         int recheck = ctl.get();
-        // 判断是否运行状态
-        if (! isRunning(recheck) && remove(command))
-            // 进入这里，表示线程池就不是运行状态，且从队列去掉刚才的任务成功
+        // 判断是否运行状态，若非运行状态，则从队列中去掉刚才的添加的任务
+        if (!isRunning(recheck) && remove(command))
+            // 进入这里，表示线程池非运行状态，且任务已从队列中删除
             // 执行拒绝策略
             reject(command);
         else if (workerCountOf(recheck) == 0)
-            // 进入这里表示，当前线程池线程数量为0，则新建一个线程，不然没有线程执行上面入队的任务
+            // 进入这里，表示当前线程池线程数量为0，则新建一个线程，不然没有线程执行上面入队的任务
+            // 这里 firstTask 设置为 null, 则该线程会直接从阻塞队列中取任务执行
             addWorker(null, false);
     }
-    // 进入这里，表示入队失败，或线程池非运行状态，直接新建一个线程执行任务
-    // 非运行状态，addWorker 方法会返回 false
+    // 进入这里，表示线程池非运行状态，或加入阻塞队列失败
+    // 若线程池非运行状态，addWorker 方法会返回 false
+    // 若是加入阻塞队列失败，则说明阻塞队列满了，需要新建线程执行任务
     else if (!addWorker(command, false))
-        // 进入这里，表示线程池非运行状态，或线程池线程数已达上限
+        // 进入这里，表示线程池非运行状态，或线程池线程数超过最大线程数
         // 执行拒绝策略
         reject(command);
 }
@@ -134,7 +137,7 @@ private boolean addWorker(Runnable firstTask, boolean core) {
         }
     }
 
-    // 到这里可以总结下上面两个循环，第一个循环针对线程池状态判断，第二个循环针对线程池中线程的数量判断
+    // 到这里可以总结下上面两个循环，第一个循环针对线程池状态判断，第二个循环针对线程池中线程数量判断
 
     // 经历千辛万苦，终于到了这里
     
